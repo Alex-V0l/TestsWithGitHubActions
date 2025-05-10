@@ -15,10 +15,10 @@ public interface TestPropertiesConfig extends Config{
         @Config.DefaultValue(BASE_URL)
         String getBaseURl();
 
-        @Config.Key("username")
+        @Config.Key("USERNAME")
         String getUsername();
 
-        @Config.Key("password")
+        @Config.Key("PASSWORD")
         String getPassword();
 
         @Config.Key("browser")
