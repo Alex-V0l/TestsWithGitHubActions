@@ -3,7 +3,9 @@ package TestPropertiesConfig;
 import org.aeonbits.owner.Config;
 
 import static Pages.BasePage.BASE_URL;
+@Config.LoadPolicy(Config.LoadType.MERGE)
 @Config.Sources({
+        "system:env",
         "classpath:${env}.properties",
         "classpath:default.properties"
 })
