@@ -3,9 +3,8 @@ package TestPropertiesConfig;
 import org.aeonbits.owner.Config;
 
 import static Pages.BasePage.BASE_URL;
-@Config.LoadPolicy(Config.LoadType.MERGE)
+
 @Config.Sources({
-        "system:env",
         "classpath:${env}.properties",
         "classpath:default.properties"
 })
@@ -15,10 +14,10 @@ public interface TestPropertiesConfig extends Config{
         @Config.DefaultValue(BASE_URL)
         String getBaseURl();
 
-        @Config.Key("USERNAME")
+        @Config.Key("username")
         String getUsername();
 
-        @Config.Key("PASSWORD")
+        @Config.Key("password")
         String getPassword();
 
         @Config.Key("browser")
