@@ -14,6 +14,7 @@ jobs:
   build:
 
     runs-on: ubuntu-latest
+    environment: TEST_ENVIRONMENT
     permissions:
       contents: write
       pages: write
