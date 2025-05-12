@@ -1,6 +1,7 @@
 package Pages;
 
 import TestPropertiesConfig.TestPropertiesConfig;
+import io.qameta.allure.Allure;
 import io.qameta.allure.Step;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,12 +37,16 @@ public class LoginFormPage extends BasePage{
 
     @Step("send text to loginForm")
     public void sendTextToLoginForm(String userNameForLoginForm){
+        String maskedLogin = "****";
         loginForm.sendKeys(userNameForLoginForm);
+        Allure.addAttachment("Password entered", "text/plain", maskedLogin, "txt");
     }
 
     @Step("send text to passwordForm")
     public void sendTextToPasswordForm(String passwordForLoginForm){
+        String maskedPassword = "****";
         passwordForm.sendKeys(passwordForLoginForm);
+        Allure.addAttachment("Password entered", "text/plain", maskedPassword, "txt");
     }
 
     @Step("click submit button")
