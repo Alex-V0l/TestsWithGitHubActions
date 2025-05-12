@@ -2,11 +2,17 @@ package Pages;
 
 import TestPropertiesConfig.TestPropertiesConfig;
 import io.qameta.allure.Allure;
+import io.qameta.allure.Param;
 import io.qameta.allure.Step;
+import io.qameta.allure.internal.shadowed.jackson.annotation.JsonCreator;
+import jdk.jfr.Threshold;
+import org.junit.jupiter.params.provider.EnumSource;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+
+import java.nio.file.AccessMode;
 
 
 public class LoginFormPage extends BasePage{
@@ -37,16 +43,14 @@ public class LoginFormPage extends BasePage{
 
     @Step("send text to loginForm")
     public void sendTextToLoginForm(String userNameForLoginForm){
-        String maskedLogin = "****";
+        Allure.parameter("Password", userNameForLoginForm, true);
         loginForm.sendKeys(userNameForLoginForm);
-        Allure.addAttachment("Password entered", "text/plain", maskedLogin, "txt");
     }
 
     @Step("send text to passwordForm")
     public void sendTextToPasswordForm(String passwordForLoginForm){
-        String maskedPassword = "****";
+        Allure.parameter("Password", passwordForLoginForm, true);
         passwordForm.sendKeys(passwordForLoginForm);
-        Allure.addAttachment("Password entered", "text/plain", maskedPassword, "txt");
     }
 
     @Step("click submit button")
