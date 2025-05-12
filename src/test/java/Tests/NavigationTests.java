@@ -183,4 +183,15 @@ public class NavigationTests extends BaseTest{
 
         Assertions.assertEquals(expectedURL, actualURL, "Значения должны совпадать");
     }
+
+    @DisplayName("проверка developer's page link")
+    @Tags({@Tag("smoke"), @Tag("UI")})
+    @Test
+    void getSubtitleTest(){
+        String expectedSubtitle = "Navigation example";
+
+        String actualSubtitle = navigationPage.getSubtitleText();
+
+        Assertions.assertEquals(expectedSubtitle, actualSubtitle, "Значения должны совпадать");
+    }
 }
