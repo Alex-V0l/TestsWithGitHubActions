@@ -20,7 +20,7 @@ public class LoginFormPage extends BasePage{
     @FindBy(xpath = "//button[@type = 'submit']")
     private WebElement submitButton;
 
-    @FindBy(id = "success")
+    @FindBy(className = "alert")
     private WebElement message;
 
     public LoginFormPage(WebDriver driver) {
